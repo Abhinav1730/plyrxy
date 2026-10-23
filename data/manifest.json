@@ -1,0 +1,643 @@
+{
+  "schema_version": 1,
+  "sha256": "a67fd043fa48e7a851b6e49a6e3661550f8dbe91e32af42abbb0e4f75c4cc376",
+  "snapshot_id": "a67fd043fa48",
+  "retrieved_at": "2026-10-23T15:00:58.385655+00:00",
+  "built_at": "2026-10-23T15:24:31.782508+00:00",
+  "source": "Elexon Insights Solution",
+  "source_base_url": "https://data.elexon.co.uk/bmrs/api/v1",
+  "attribution": "Contains BMRS data \u00a9 Elexon Limited copyright and database right.",
+  "decision_from": "2026-01-01",
+  "decision_to": "2026-01-31",
+  "delivery_from": "2026-01-02",
+  "delivery_to": "2026-02-01",
+  "forecast_records": 17864,
+  "actual_records": 1488,
+  "raw_forecast_records": 17864,
+  "raw_actual_records": 1488,
+  "duplicate_forecasts_removed": 0,
+  "duplicate_actuals_or_nonwind_removed": 0,
+  "null_forecast_records": 0,
+  "null_actual_records": 0,
+  "forecast_minutes_observed": [
+    0
+  ],
+  "queries": [
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2025-12-29T00:00:00Z",
+        "publishDateTimeTo": "2025-12-30T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.134872+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2025-12-30T00:00:00Z",
+        "publishDateTimeTo": "2025-12-31T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.176703+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2025-12-31T00:00:00Z",
+        "publishDateTimeTo": "2026-01-01T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.146004+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-01T00:00:00Z",
+        "publishDateTimeTo": "2026-01-02T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.340971+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-02T00:00:00Z",
+        "publishDateTimeTo": "2026-01-03T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.355084+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-03T00:00:00Z",
+        "publishDateTimeTo": "2026-01-04T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.520355+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-04T00:00:00Z",
+        "publishDateTimeTo": "2026-01-05T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.609238+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-05T00:00:00Z",
+        "publishDateTimeTo": "2026-01-06T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.720495+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-06T00:00:00Z",
+        "publishDateTimeTo": "2026-01-07T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.853754+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-07T00:00:00Z",
+        "publishDateTimeTo": "2026-01-08T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:53.907522+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-08T00:00:00Z",
+        "publishDateTimeTo": "2026-01-09T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.047005+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-09T00:00:00Z",
+        "publishDateTimeTo": "2026-01-10T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.103769+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-10T00:00:00Z",
+        "publishDateTimeTo": "2026-01-11T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.253695+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-11T00:00:00Z",
+        "publishDateTimeTo": "2026-01-12T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.285520+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-12T00:00:00Z",
+        "publishDateTimeTo": "2026-01-13T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.319885+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-13T00:00:00Z",
+        "publishDateTimeTo": "2026-01-14T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.453538+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-14T00:00:00Z",
+        "publishDateTimeTo": "2026-01-15T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.474019+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-15T00:00:00Z",
+        "publishDateTimeTo": "2026-01-16T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.520147+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-16T00:00:00Z",
+        "publishDateTimeTo": "2026-01-17T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.697265+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-17T00:00:00Z",
+        "publishDateTimeTo": "2026-01-18T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.672327+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-18T00:00:00Z",
+        "publishDateTimeTo": "2026-01-19T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.714169+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-19T00:00:00Z",
+        "publishDateTimeTo": "2026-01-20T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.850959+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-20T00:00:00Z",
+        "publishDateTimeTo": "2026-01-21T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.912392+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-21T00:00:00Z",
+        "publishDateTimeTo": "2026-01-22T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:54.914516+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-22T00:00:00Z",
+        "publishDateTimeTo": "2026-01-23T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.046694+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-23T00:00:00Z",
+        "publishDateTimeTo": "2026-01-24T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.116115+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-24T00:00:00Z",
+        "publishDateTimeTo": "2026-01-25T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.117104+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-25T00:00:00Z",
+        "publishDateTimeTo": "2026-01-26T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.261681+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-26T00:00:00Z",
+        "publishDateTimeTo": "2026-01-27T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.312989+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-27T00:00:00Z",
+        "publishDateTimeTo": "2026-01-28T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.391001+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-28T00:00:00Z",
+        "publishDateTimeTo": "2026-01-29T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.447134+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-29T00:00:00Z",
+        "publishDateTimeTo": "2026-01-30T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.512116+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-30T00:00:00Z",
+        "publishDateTimeTo": "2026-01-31T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.585929+00:00"
+    },
+    {
+      "dataset": "WINDFOR",
+      "params": {
+        "publishDateTimeFrom": "2026-01-31T00:00:00Z",
+        "publishDateTimeTo": "2026-02-01T00:00:00Z"
+      },
+      "returned_records": 584,
+      "retrieved_at": "2026-10-23T15:00:55.637371+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-02",
+        "settlementDateTo": "2026-01-02",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:55.720039+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-03",
+        "settlementDateTo": "2026-01-03",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:55.773600+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-04",
+        "settlementDateTo": "2026-01-04",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:55.814677+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-05",
+        "settlementDateTo": "2026-01-05",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:55.907634+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-06",
+        "settlementDateTo": "2026-01-06",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:55.953289+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-07",
+        "settlementDateTo": "2026-01-07",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:55.986386+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-08",
+        "settlementDateTo": "2026-01-08",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.149831+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-09",
+        "settlementDateTo": "2026-01-09",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.141913+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-10",
+        "settlementDateTo": "2026-01-10",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.262176+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-11",
+        "settlementDateTo": "2026-01-11",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.342533+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-12",
+        "settlementDateTo": "2026-01-12",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.342533+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-13",
+        "settlementDateTo": "2026-01-13",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.446341+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-14",
+        "settlementDateTo": "2026-01-14",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.538274+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-15",
+        "settlementDateTo": "2026-01-15",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.548046+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-16",
+        "settlementDateTo": "2026-01-16",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.629077+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-17",
+        "settlementDateTo": "2026-01-17",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.729657+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-18",
+        "settlementDateTo": "2026-01-18",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.755075+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-19",
+        "settlementDateTo": "2026-01-19",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:56.812910+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-20",
+        "settlementDateTo": "2026-01-20",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:57.529487+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-21",
+        "settlementDateTo": "2026-01-21",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:57.052794+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-22",
+        "settlementDateTo": "2026-01-22",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:57.739510+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-23",
+        "settlementDateTo": "2026-01-23",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:57.593556+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-24",
+        "settlementDateTo": "2026-01-24",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:57.757724+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-25",
+        "settlementDateTo": "2026-01-25",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:57.797676+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-26",
+        "settlementDateTo": "2026-01-26",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:58.051213+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-27",
+        "settlementDateTo": "2026-01-27",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:57.980464+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-28",
+        "settlementDateTo": "2026-01-28",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:58.023012+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-29",
+        "settlementDateTo": "2026-01-29",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:58.176111+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-30",
+        "settlementDateTo": "2026-01-30",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:58.219892+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-01-31",
+        "settlementDateTo": "2026-01-31",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:58.252403+00:00"
+    },
+    {
+      "dataset": "FUELHH",
+      "params": {
+        "settlementDateFrom": "2026-02-01",
+        "settlementDateTo": "2026-02-01",
+        "fuelType": "WIND"
+      },
+      "returned_records": 48,
+      "retrieved_at": "2026-10-23T15:00:58.385655+00:00"
+    }
+  ]
+}

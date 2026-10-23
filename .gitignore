@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+frontend/dist/
+.env
+.superpowers/
+data/raw/
+artifacts/
+*.log
+*.tsbuildinfo
+.DS_Store
