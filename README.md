@@ -4,6 +4,12 @@ A React + Python product for replaying the wind forecasts available to a Great B
 
 The application uses real **Elexon WINDFOR and WIND FUELHH** data. No API key, database account, or AI inference service is needed. The included immutable snapshot lets the app start without contacting Elexon.
 
+## Live application
+
+**Vercel:** [https://plyrxy.vercel.app/](https://plyrxy.vercel.app/)
+
+Open the [homepage](https://plyrxy.vercel.app/), [forecast dashboard](https://plyrxy.vercel.app/dashboard), or [interactive API documentation](https://plyrxy.vercel.app/docs). No local installation is needed to use the hosted application.
+
 ## Run with Docker
 
 Start Docker Desktop, then from the repository root:
@@ -20,6 +26,15 @@ The multistage image compiles React, installs pinned Python dependencies, packag
 
 Requires Python 3.12 and Node.js 24. On Windows PowerShell:
 
+Clone the repository and enter its root directory first:
+
+```sh
+git clone https://github.com/Abhinav1730/plyrxy.git
+cd plyrxy
+```
+
+Then install dependencies, build the frontend, and start the server:
+
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python -m pip install -r backend/requirements-dev.txt
@@ -31,6 +46,8 @@ cd ..
 ```
 
 On macOS/Linux, replace `.\.venv\Scripts\python` with `.venv/bin/python`.
+
+Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) after the server starts. Stop the server with `Ctrl+C`. The bundled snapshot is loaded automatically; no data download or environment file is required.
 
 For frontend hot reload, keep the API on port 8000 and run `npm run dev` from `frontend`. Vite proxies `/api` to FastAPI. For the production-style local preview use port 8000 after `npm run build`.
 
@@ -75,6 +92,9 @@ The [architecture](docs/architecture.md), [methodology](docs/methodology.md), an
 
 | Path | Responsibility |
 |---|---|
+| `README.md` | Setup, live application links, repository guide, API and deployment instructions |
+| `backend/` | Python package containing the FastAPI application and backend tests |
+| `backend/requirements.txt`, `requirements-dev.txt` | Pinned runtime dependencies and additional test/lint dependencies |
 | `backend/app/models.py` | Source validation, indexing, typed report contracts |
 | `backend/app/analytics.py` | Cutoff reconstruction, alignment, metrics |
 | `backend/app/ingest.py` | Bounded source retrieval, retries, local raw cache, snapshot creation |
@@ -83,6 +103,9 @@ The [architecture](docs/architecture.md), [methodology](docs/methodology.md), an
 | `backend/app/audit.py` | Real-data cohort invariants and leaky-forecast comparator |
 | `backend/tests/` | Unit, API, failure-path, and real-snapshot tests |
 | `frontend/src/App.tsx` | Homepage/workspace entry with lazy-loaded dashboard |
+| `frontend/index.html`, `frontend/src/main.tsx` | HTML shell and React application bootstrap |
+| `frontend/package.json`, `package-lock.json` | Frontend commands, dependencies and reproducible npm dependency lock |
+| `frontend/vite.config.ts`, `tsconfig.json` | Vite build/dev proxy, Vitest configuration and TypeScript compiler settings |
 | `frontend/src/HomePage.tsx`, `home.css` | Product introduction, imagery, workflows and scope |
 | `frontend/src/Dashboard.tsx` | Workspace navigation and decision filters |
 | `frontend/src/Brand.tsx` | Shared brand/home navigation |
@@ -92,10 +115,20 @@ The [architecture](docs/architecture.md), [methodology](docs/methodology.md), an
 | `frontend/src/api.ts` | Abortable resource fetching and formatting |
 | `frontend/src/api-schema.d.ts` | Generated types from backend OpenAPI |
 | `frontend/src/styles.css` | Responsive light-mode design system |
-| `data/` | Compressed source-derived snapshot and query manifest |
+| `frontend/src/*.test.tsx`, `test-setup.ts` | Frontend component/API tests and shared test setup |
+| `data/snapshot.json.gz` | Versioned source-derived historical data used at startup |
+| `data/manifest.json`, `data/README.md` | Snapshot checksum, retrieval metadata and data scope documentation |
 | `docs/` | Architecture, methodology, implementation plan, verification |
+| `docs/design-assets.md`, `docs/homepage.md`, `design-qa.md` | Image provenance, homepage design and visual QA notes |
+| `docs/superpowers/plans/` | Implementation plan and acceptance criteria |
 | `Dockerfile`, `compose.yaml` | Reproducible single-origin deployment |
+| `Dockerfile.vercel` | Vercel container build packaging React, FastAPI and the snapshot |
+| `vercel.json` | Single container service and public catch-all routing on Vercel |
+| `pyproject.toml` | Pytest discovery and Ruff lint/format configuration |
+| `.gitignore` | Excludes local environments, dependency/build output, caches and secrets |
 | `.github/workflows/ci.yml` | Python, frontend, data audit, and container checks |
+
+Generated local directories such as `.venv/`, `frontend/node_modules/`, `frontend/dist/`, and `data/raw/` are ignored by Git. They contain the Python environment, npm dependencies, compiled frontend, and optional ingestion cache respectively; they are not additional source files.
 
 ## Data refresh
 
@@ -138,7 +171,13 @@ Dates outside January and invalid cutoffs receive 422 responses. A missing or co
 
 ## Hosting
 
-**Public deployment: not provisioned in this repository yet.** Local application and Docker packaging are provided. No live URL is implied.
+The application is deployed on **Vercel** at [https://plyrxy.vercel.app/](https://plyrxy.vercel.app/).
+
+Import the GitHub repository with the repository root (`./`) as the Root Directory and `main` as the Production Branch. The root `vercel.json` declares one public container service named `app`, built from `Dockerfile.vercel`. Set `PORT=8000` in Vercel's project environment variables. The Dockerfile handles dependency installation and frontend compilation; no separate frontend/backend services, internal bindings, database, or API keys are required. All public paths, including `/api/v1/...`, reach the same FastAPI server, which also serves the compiled React application.
+
+With Vercel's Git integration connected, pushes to `main` trigger production deployments. After deployment, check `/`, `/dashboard`, `/docs`, and `/readyz`, and verify charts and CSV export. The snapshot ships inside the image; rebuild and redeploy to publish a refreshed snapshot.
+
+### Alternative: Heroku
 
 The application is prepared for a single Heroku web container, which binds to the platform-provided `PORT`. Using an authenticated Heroku CLI and an app in your account:
 
@@ -150,7 +189,7 @@ heroku container:release web --app YOUR_ANONYMOUS_APP_NAME
 heroku open --app YOUR_ANONYMOUS_APP_NAME
 ```
 
-Provisioning hosting can incur charges. The snapshot ships inside the image; no persistent filesystem is required. Rebuild and redeploy to publish a new snapshot. The repository name can be an anonymous random string; it is independent of the UI product name.
+The Heroku commands are an alternative deployment path; the live application linked above is hosted on Vercel. No persistent filesystem is required.
 
 See [Heroku’s container runtime documentation](https://devcenter.heroku.com/articles/container-registry-and-runtime). Deployment credentials belong in the hosting/CI secret store, never in the frontend or Git repository.
 
