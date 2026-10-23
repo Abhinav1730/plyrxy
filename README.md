@@ -1,6 +1,6 @@
 # Wind Intelligence
 
-A React + Python dashboard for replaying the wind forecasts available to a Great Britain electricity buyer before a day-ahead decision, and measuring their subsequent accuracy. The light analyst workspace includes decision replay, monthly accuracy, source provenance, alignment sensitivity, and CSV export.
+A React + Python product for replaying the wind forecasts available to a Great Britain electricity buyer before a day-ahead decision, and measuring their subsequent accuracy. An introductory homepage explains the pilot with locally packaged wind-energy imagery. The light analyst workspace includes decision replay, monthly accuracy, source provenance, alignment sensitivity, and CSV export.
 
 The application uses real **Elexon WINDFOR and WIND FUELHH** data. No API key, database account, or AI inference service is needed. The included immutable snapshot lets the app start without contacting Elexon.
 
@@ -12,7 +12,7 @@ Start Docker Desktop, then from the repository root:
 docker compose up --build
 ```
 
-Open [the dashboard](http://localhost:8000) and [API documentation](http://localhost:8000/docs). Stop with `docker compose down`.
+Open [the homepage](http://localhost:8000), [dashboard](http://localhost:8000/dashboard), and [API documentation](http://localhost:8000/docs). Stop with `docker compose down`.
 
 The multistage image compiles React, installs pinned Python dependencies, packages the snapshot, and runs FastAPI as a nonroot user. `/readyz` verifies that a valid snapshot loaded; `/healthz` checks process health.
 
@@ -36,6 +36,7 @@ For frontend hot reload, keep the API on port 8000 and run `npm run dev` from `f
 
 ## What to inspect
 
+- **Homepage:** read the pilot introduction, workflows, and data scope; enter the workspace or open accuracy/methodology directly.
 - **Decision replay:** choose a January decision date and cutoff; inspect the next delivery day, forecast and actual series, signed errors, publication provenance, and exact CSV values.
 - **Accuracy:** review MAE, RMSE, bias, WAPE, coverage, and daily results for all January decisions. Select a date in the breakdown to replay it.
 - **Methodology:** understand cutoff rules, comparison limitations, source snapshot, and hourly-mean alignment sensitivity.
@@ -81,7 +82,11 @@ The [architecture](docs/architecture.md), [methodology](docs/methodology.md), an
 | `backend/app/main.py` | JSON/CSV endpoints, readiness, compiled frontend serving |
 | `backend/app/audit.py` | Real-data cohort invariants and leaky-forecast comparator |
 | `backend/tests/` | Unit, API, failure-path, and real-snapshot tests |
-| `frontend/src/App.tsx` | Navigation and decision filters |
+| `frontend/src/App.tsx` | Homepage/workspace entry with lazy-loaded dashboard |
+| `frontend/src/HomePage.tsx`, `home.css` | Product introduction, imagery, workflows and scope |
+| `frontend/src/Dashboard.tsx` | Workspace navigation and decision filters |
+| `frontend/src/Brand.tsx` | Shared brand/home navigation |
+| `frontend/public/images/` | Optimized, locally served AI-generated wind imagery |
 | `frontend/src/components.tsx` | Replay charts, snapshot panel, interval table |
 | `frontend/src/views.tsx` | Accuracy and methodology views |
 | `frontend/src/api.ts` | Abortable resource fetching and formatting |
@@ -153,4 +158,4 @@ See [Heroku’s container runtime documentation](https://devcenter.heroku.com/ar
 
 Contains BMRS data © Elexon Limited copyright and database right. Source: [Elexon Insights](https://developer.data.elexon.co.uk/), [WINDFOR](https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/WINDFOR/stream), [FUELHH](https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/FUELHH/stream). Source documentation: [OpenAPI specification](https://data.elexon.co.uk/swagger/v1/swagger.json). Data reuse is subject to Elexon’s applicable [BMRS data licence](https://www.elexon.co.uk/bsc/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/).
 
-AI assistance: OpenAI Codex assisted with architecture, implementation, tests, documentation, and review. OpenAI image generation produced the selected visual concept. The product does not call an AI service at runtime; displayed analytical values come from Elexon data and deterministic calculations.
+AI assistance: OpenAI Codex assisted with architecture, implementation, tests, documentation, and review. OpenAI image generation produced the selected visual concept and two illustrative homepage images. Asset prompts and provenance are in [design assets](docs/design-assets.md). The product does not call an AI service at runtime; displayed analytical values come from Elexon data and deterministic calculations.

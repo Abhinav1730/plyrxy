@@ -5,7 +5,7 @@ Snapshot: `a67fd043fa48`. Source: Elexon WINDFOR and WIND FUELHH, retrieved 23 O
 ## Automated evidence
 
 - Backend: 36 tests covering cutoff inclusion/exclusion, independent target selection, null supersession, duplicates, zero/missing metrics, alignment, revisions, date boundaries, validation, CSV agreement, failure readiness, static routing, retries, snapshot corruption, cache provenance, and real-data selection invariants.
-- Frontend: 7 tests covering filter parameters, delivery rollover, navigation, pagination, errors, native input events, stale responses, loading consistency, and retry. Layout-heavy chart components are replaced in interaction unit tests; charts are checked in the real browser.
+- Frontend: 10 tests covering homepage/route entry, no analytics fetch on the homepage, share-URL restoration, filter parameters, delivery rollover, navigation, pagination, errors, native input events, stale responses, loading consistency, and retry. Layout-heavy chart components are replaced in interaction unit tests; charts are checked in the real browser.
 - Production TypeScript/Vite build and generated OpenAPI types.
 - Ruff lint/format and Prettier formatting.
 - npm audit: zero known vulnerabilities after upgrading Vitest to 5.0.5.
@@ -39,6 +39,14 @@ The reviewer accepted explicit alignment limitations, retrospective actual revis
 
 ## Deployment status
 
-Local execution and Docker packaging are verified. Public Heroku/Vercel hosting has not been provisioned; no public URL is claimed. CI configuration is included but remote CI has not been run because this repository has not been pushed.
+Local execution and Docker packaging are verified. Public Heroku/Vercel hosting has not been provisioned; no public URL is claimed. CI configuration is included; consult GitHub Actions for remote run status. Local verification results above are not a claim that remote CI has passed.
 
 Browser layout and interaction evidence is recorded separately in `design-qa.md`. Screenshots under ignored `artifacts/` are local verification outputs, not runtime dependencies.
+
+## Homepage increment
+
+The public homepage is `/`; the analytical workspace is `/dashboard`. Two locally packaged generated WebP images total approximately 467 KB. The lower image is lazy loaded. The dashboard bundle is lazy loaded, and the homepage does not request analytics data.
+
+A separate reviewer checked this increment and ran the frontend suite. Two findings were addressed: supporting text contrast was strengthened, and dashboard view/filter state now stays synchronized with the share URL. A regression test failed before URL synchronization was implemented and passes after it, including a remount that models refresh.
+
+Browser checks verified homepage anchors, both image loads, the accuracy deep link, methodology refresh restoration, navigation home, and the mobile homepage-to-dashboard journey. At the 390-pixel mobile viewport, both homepage and workspace reported content width and scroll width of 375 pixels, confirming no document overflow. Browser console warnings/errors were empty. The production build includes both local image assets.

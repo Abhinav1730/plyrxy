@@ -7,7 +7,7 @@ import {
   within,
 } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import App from "./App";
+import App from "./Dashboard";
 
 // Layout-heavy charts are verified in the real browser. These component tests
 // exercise filter state, fetching, navigation and data tables without a fake
@@ -61,6 +61,7 @@ const day = {
 
 describe("core workflow", () => {
   beforeEach(() => {
+    window.history.replaceState({}, "", "/dashboard");
     vi.stubGlobal(
       "fetch",
       vi.fn(async (input: string) => ({
@@ -157,5 +158,34 @@ describe("core workflow", () => {
       input.dispatchEvent(new Event("input", { bubbles: true }));
     });
     expect(screen.getByLabelText("Delivery date")).toHaveValue("01 Feb 2026");
+  });
+
+  it("keeps the share URL aligned with tabs and filters and restores it on refresh", async () => {
+    const view = render(<App />);
+    await screen.findByRole("complementary", { name: "Decision snapshot" });
+    fireEvent.click(screen.getByRole("tab", { name: "Accuracy" }));
+    expect(new URLSearchParams(window.location.search).get("view")).toBe(
+      "accuracy",
+    );
+    fireEvent.click(screen.getByRole("tab", { name: "Methodology" }));
+    expect(new URLSearchParams(window.location.search).get("view")).toBe(
+      "methodology",
+    );
+    fireEvent.change(screen.getByLabelText("Decision date"), {
+      target: { value: "2026-01-31" },
+    });
+    fireEvent.change(screen.getByLabelText("Decision cutoff"), {
+      target: { value: "12:00" },
+    });
+    expect(
+      new URLSearchParams(window.location.search).get("decision_date"),
+    ).toBe("2026-01-31");
+    view.unmount();
+    render(<App />);
+    expect(
+      screen.getByRole("heading", { name: "How the replay works" }),
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText("Decision date")).toHaveValue("2026-01-31");
+    expect(screen.getByLabelText("Decision cutoff")).toHaveValue("12:00");
   });
 });

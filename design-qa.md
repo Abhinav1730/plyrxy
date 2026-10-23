@@ -5,7 +5,7 @@
 ## Visual truth and capture
 
 - Source: selected user attachment `C:/Users/ABHINA~1/AppData/Local/Temp/codex-clipboard-25ac5d97-44cb-4fb3-a324-7b5f660e8628.png`, 1487 × 1058 pixels.
-- Rendered app: `http://127.0.0.1:8000/`.
+- Rendered analytical workspace: `http://127.0.0.1:8000/dashboard` (homepage is now `/`).
 - Desktop evidence: ignored `artifacts/replay-desktop.jpg`, captured with a 1488 × 1058 CSS viewport; browser content capture is 1473 × 1048 pixels after native viewport/chrome exclusion. Device scale approximately 1. No image stretching or density resampling was used. Native capture margins are excluded from visual judgment.
 - Mobile evidence: ignored `artifacts/replay-mobile.jpg`, 390 × 844 CSS viewport, browser content capture 375 × 811 pixels.
 - Methodology evidence: ignored `artifacts/methodology-desktop.jpg`, 1473 × 1048 content pixels.
@@ -53,3 +53,15 @@ Browser viewport was reset after testing. Runtime and screenshot verification we
 - [P3] Native date fields use the browser’s locale-specific date formatting instead of reproducing the image’s static date text.
 
 No actionable P0/P1/P2 findings remain. Screenshot files are ignored local QA evidence and are not needed to run the application.
+
+## Homepage extension QA
+
+The homepage extends the selected blue-and-white design: Inter typography, the same brand mark and blue controls, open white layout, fine neutral dividers and restrained pale-blue surfaces. It introduces the product and its existing workflows without showing invented analytics. Generated images are real packaged raster assets with descriptive alt text and illustrative-image captions.
+
+Evidence: `artifacts/home-desktop.jpg`, `artifacts/home-scope.jpg`, and `artifacts/home-mobile.jpg`. The desktop preview uses the browser’s normal viewport (approximately 1265 × 712); the responsive check uses 390 × 844. Native content screenshots exclude browser scrollbar/chrome margins. No scaling or stretching was applied to screenshots.
+
+Fonts, section spacing, blue/slate palette, image sharpness/crops and scope copy were inspected in desktop hero and lower data-section captures. Mobile hierarchy reflows to a single column, keeps the primary action visible, and loads the imagery without horizontal overflow. Both images report complete with nonzero natural dimensions. Homepage and workspace each report mobile content/scroll widths of 375/375 pixels.
+
+Supporting text colors were darkened to `#64748b` after review. The primary link opens `/dashboard`; accuracy and methodology links select their corresponding views. Changing view or filters updates the URL, and refresh restores that state. Header Home and brand links return to `/`. Anchor navigation, desktop/mobile entry journeys and absence of browser console errors were verified.
+
+Homepage extension final result: passed.
