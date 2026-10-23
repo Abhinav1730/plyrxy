@@ -23,9 +23,6 @@ describe("homepage and workspace entry", () => {
       screen.getByRole("link", { name: "Explore accuracy" }),
     ).toHaveAttribute("href", "/dashboard?view=accuracy");
     expect(screen.getAllByRole("img")).toHaveLength(2);
-    expect(
-      screen.getByText(/historical pilot · january 2026/i),
-    ).toBeInTheDocument();
     expect(fetch).not.toHaveBeenCalled();
   });
 

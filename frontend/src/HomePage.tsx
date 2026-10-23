@@ -29,7 +29,6 @@ export default function HomePage() {
           aria-labelledby="home-title"
         >
           <div className="home-hero-copy">
-            <span className="home-kicker">Historical pilot · January 2026</span>
             <h1 id="home-title">
               Tomorrow’s wind.<span>A clearer decision.</span>
             </h1>
